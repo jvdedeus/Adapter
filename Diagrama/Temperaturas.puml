@@ -1,0 +1,50 @@
+@startuml Temperaturas{
+    abstract class Temperatura {
+        - temperatura: double
+        + getTemperatura(): double
+    }
+    class Celsius {
+    }
+    class Fahrenheit {
+    }
+    class Kelvin {
+    }
+
+    class CelsiusFahrenheit {
+        - celsius: Celsius
+        + getTemperatura(): double
+    }
+    class CelsiusKelvin {
+        - celsius: Celsius
+        + getTemperatura(): double
+    }
+    class FahrenheitCelsius {
+        - fahrenheit: Fahrenheit
+        + getTemperatura(): double
+    }
+    class FahrenheitKelvin {
+        - fahrenheit: Fahrenheit
+        + getTemperatura(): double
+    }
+    class KelvinCelsius {
+        - kelvin: Kelvin
+        + getTemperatura(): double
+    }
+    class KelvinFahrenheit {
+        - kelvin: Kelvin
+        + getTemperatura(): double
+    }
+
+    Celsius --|> Temperatura
+    Fahrenheit --|> Temperatura
+    Kelvin --|> Temperatura
+
+    CelsiusFahrenheit --> Celsius
+    CelsiusKelvin --> Celsius
+    FahrenheitCelsius --> Fahrenheit
+    FahrenheitKelvin --> Fahrenheit
+    KelvinCelsius --> Kelvin
+    KelvinFahrenheit --> Kelvin
+}
+
+@enduml
